@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Подарок от WeCode</title>
+</head>
+<body>
+    <h1 class="title">Нажми на подарок и получи приз!</h1>
+    <div class="container">
+        <img class="container__box box--up" src="img/gift_up.png" alt="" width="325" height="300">
+        <img class="container__box" src="img/gift_down.png" alt="" width="300" height="300">
+    </div>
+    <div class="happy-block">
+        <img class="happy-block__img" src="https://i.ibb.co/LPgnm1T/image.png" alt="" width="100" height="100">
+        <img style="transform: rotate(-90deg);" class="happy-block__img" src="https://i.ibb.co/LPgnm1T/image.png" alt="" width="100" height="100">
+    </div>
+
+<script>
+    document.querySelector('.container').addEventListener('click', function(){
+        let happy = document.querySelector('.happy-block')
+        let h1 = document.querySelector('.title')
+        let boxUp = document.querySelector('.box--up')
+        h1.style.opacity = '0'
+        happy.classList.add('happy-flex')
+        boxUp.classList.add('box--delete')
+        document.querySelector('.container').innerHTML += '<img class="gift" src="img/gift.png" alt="" width="250" height="250">'
+    })
+</script>
+</body>
+</html>
